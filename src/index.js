@@ -6,7 +6,11 @@ import Promise from 'bluebird';
 // apply postal observe addon
 postalObserve(postal);
 // apply postal request-response addon
-postalRequestResponse(postal);
+// check if postal.request-response has already been applied
+// TODO: remove when issue in webpack has been fixed
+if (!postal.ChannelDefinition.prototype.request) {
+    postalRequestResponse(postal);
+}
 // We have to tell postal how to get an deferred instance
 postal.configuration.promise.createDeferred = function() {
     var defer = function() {
