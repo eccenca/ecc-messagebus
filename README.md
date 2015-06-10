@@ -42,14 +42,14 @@ channel.request({
 
 ### Using Rx.Observable subscription
 
-Rx.Observable pattern is added using [Rx.js](https://github.com/Reactive-Extensions/RxJS) and can be used like so:
+Rx.Observable pattern is added using [postal.observe](https://github.com/yamalight/postal.observe) and can be used like so:
 
 ```js
 import postal from 'ecc-postal';
 // ...
 // get channel
 const channel = postal.channel('yourChannel');
-// subscribe to topic
+// subscribe to topic (you can also use postal.observe({channel, topic}))
 const source = channel.observe('someTopic');
 // do your work over the Rx.Observable
 // e.g. source.skip(1).take(1).delay(100)...
