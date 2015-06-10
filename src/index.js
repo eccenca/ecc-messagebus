@@ -26,7 +26,7 @@ postal.configuration.promise.getPromise = function(dfd) {
 };
 
 // add reacive-request
-postal.ChannelDefinition.prototype.rxSubscribe = function(options) {
+postal.ChannelDefinition.prototype.observe = function(options) {
     var self = this;
     var topic = options.topic ? options.topic : options;
 

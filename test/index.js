@@ -40,7 +40,7 @@ describe('Postal.js', function() {
     it('should work with Rx.Observable workflow', function(done) {
         const channel = postal.channel('test3');
         // rx workflow
-        const source = channel.rxSubscribe('test');
+        const source = channel.observe('test');
         source.skip(1).take(1).delay(100).subscribe(
         (body) => {
             should(body).equal('test2');
