@@ -1,10 +1,12 @@
 import postal from 'postal';
+import postalRequestResponse from 'postal.request-response';
+import postalObserve from 'postal.observe';
 import Promise from 'bluebird';
 
 // apply postal observe addon
-require('postal.observe')(postal);
+postalObserve(postal);
 // apply postal request-response addon
-require('postal.request-response')(postal);
+postalRequestResponse(postal);
 // We have to tell postal how to get an deferred instance
 postal.configuration.promise.createDeferred = function() {
     var defer = function() {
