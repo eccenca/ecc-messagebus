@@ -1,7 +1,10 @@
 import postal from 'postal';
 import postalRequestResponse from 'postal.request-response';
+import postalObserve from 'postal.observe';
 import Promise from 'bluebird';
-import Rx from 'rx';
+
+// apply postal observe addon
+postalObserve(postal);
 // apply postal request-response addon
 postalRequestResponse(postal);
 // We have to tell postal how to get an deferred instance
@@ -23,24 +26,6 @@ postal.configuration.promise.createDeferred = function() {
 // We have to tell postal how to get a "public-facing"/safe promise instance
 postal.configuration.promise.getPromise = function(dfd) {
     return dfd.promise;
-};
-
-// add reacive-request
-postal.ChannelDefinition.prototype.observe = function(options) {
-    var self = this;
-    var topic = options.topic ? options.topic : options;
-
-    return Rx.Observable.fromEventPattern(
-        function addHandler(h) {
-            return self.bus.subscribe({
-                channel: self.channel,
-                topic: topic,
-                callback: h,
-            });
-        },
-        function delHandler(_, sub) {
-            sub.unsubscribe();
-        });
 };
 
 export default postal;
