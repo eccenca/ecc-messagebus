@@ -50,7 +50,7 @@ import postal from 'ecc-postal';
 // get channel
 const channel = postal.channel('yourChannel');
 // subscribe to topic
-const source = channel.rxSubscribe('someTopic');
+const source = channel.observe('someTopic');
 // do your work over the Rx.Observable
 // e.g. source.skip(1).take(1).delay(100)...
 source.subscribe(
