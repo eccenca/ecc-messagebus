@@ -1,6 +1,6 @@
 {
   "name": "ecc-postal",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Eccenca Postal wrapper that adds a set of utilities on top of default postal.js lib",
   "main": "es5/component.js",
   "es5": "es5/component.js",
@@ -19,7 +19,7 @@
   "author": "Tim Ermilov <tim.ermilov@eccenca.com>",
   "license": "GPL-3.0",
   "devDependencies": {
-    "ecc-gulp-tasks": "^0.2.3",
+    "ecc-gulp-tasks": "^0.6.0",
     "ecc-test-helpers": "^0.1.2",
     "gulp": "^3.8.11"
   },
