@@ -1,10 +1,7 @@
 import postal from 'postal';
 import postalRequestResponse from 'postal.request-response';
-import postalObserve from 'postal.observe';
 import Promise from 'bluebird';
 
-// apply postal observe addon
-postalObserve(postal);
 // apply postal request-response addon
 // check if postal.request-response has already been applied
 // TODO: remove when issue in webpack has been fixed

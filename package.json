@@ -19,14 +19,13 @@
   "author": "Tim Ermilov <tim.ermilov@eccenca.com>",
   "license": "GPL-3.0",
   "devDependencies": {
-    "ecc-gulp-tasks": "^0.6.0",
+    "ecc-gulp-tasks": "^0.7.0",
     "ecc-test-helpers": "^0.1.2",
     "gulp": "^3.8.11"
   },
   "dependencies": {
     "bluebird": "^2.9.27",
     "postal": "^1.0.6",
-    "postal.observe": "^0.1.0",
     "postal.request-response": "^0.3.1"
   }
 }
