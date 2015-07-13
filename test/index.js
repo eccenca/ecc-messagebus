@@ -14,41 +14,40 @@ describe('Postal.js', function() {
 
     it('should work with normal postal workflow', function(done) {
         const channel = postal.channel('test1');
-        channel.subscribe('test', (msg) => {
+        channel.subject('test').subscribe((msg) => {
             should(msg).equal('test');
             done();
         });
-        channel.publish('test', 'test');
+        channel.subject('test').onNext('test');
     });
 
     it('should work with request-response workflow', function(done) {
         const channel = postal.channel('test2');
-        channel.subscribe('test', (msg, envelop) => {
-            should(msg).equal('test');
-            envelop.reply(null, 'ok');
+        channel.subject('test').subscribe(({data, replySubject}) => {
+            should(data).equal('test');
+            replySubject.onNext('ok');
+            replySubject.onCompleted();
         });
-        channel.request({
-            topic: 'test',
+        channel.request('test', {
             data: 'test',
-            timeout: 2000
-        }).then((data) => {
+        }).subscribe((data) => {
             should(data).equal('ok');
             done();
-        }, (err) => { throw err; });
+        });
     });
 
     it('should work with Rx.Observable workflow', function(done) {
         const channel = postal.channel('test3');
         // rx workflow
-        const source = channel.observe('test');
+        const source = channel.subject('test');
         source.skip(1).take(1).delay(100).subscribe(
         (body) => {
             should(body).equal('test2');
         }, (err) => { throw err; }, () => done());
 
         // dispatch messages
-        channel.publish('test', 'test');
-        channel.publish('test', 'test2');
-        channel.publish('test', 'test3');
+        channel.subject('test').onNext('test');
+        channel.subject('test').onNext('test2');
+        channel.subject('test').onNext('test3');
     });
 });
