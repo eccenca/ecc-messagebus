@@ -28,7 +28,8 @@ describe('Postal.js', function() {
             replySubject.onNext('ok');
             replySubject.onCompleted();
         });
-        channel.request('test', {
+        channel.request({
+            topic: 'test',
             data: 'test',
         }).subscribe((data) => {
             should(data).equal('ok');
