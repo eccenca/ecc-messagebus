@@ -51,4 +51,18 @@ describe('Postal.js', function() {
         channel.subject('test').onNext('test2');
         channel.subject('test').onNext('test3');
     });
+
+    it('should apply middleware', function(done) {
+        const channel = postal.channel('test4');
+        // rx workflow
+        const source = channel.subject('test');
+        source.middleware.add((val) => val + '_middleware');
+        source.subscribe((body) => {
+            should(body).equal('test_middleware');
+            done();
+        });
+
+        // dispatch messages
+        channel.subject('test').onNext('test');
+    });
 });
