@@ -1,5 +1,6 @@
-# Rxmq.js with util
+# Rxmq.js with util (ecc-messagebus)
 
+Eccenca Message Bus for inter-component and in-app communications
 Eccenca Rxmq wrapper.
 
 ## Usage
