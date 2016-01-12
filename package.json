@@ -1,7 +1,7 @@
 {
   "name": "ecc-messagebus",
   "version": "3.3.2",
-  "description": "Eccenca Message Bus for inter-component and in-app communications",
+  "description": "Eccenca Message Bus for inter-component and in-app communications.",
   "main": "es5/component.js",
   "es5": "es5/component.js",
   "es6": "index.js",
