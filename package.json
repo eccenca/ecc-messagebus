@@ -14,9 +14,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.eccenca.com/elds-ui/ecc-messagebus.git"
+    "url": "https://github.com/elds/ecc-messagebus.git"
   },
-  "author": "Tim Ermilov <tim.ermilov@eccenca.com>",
+  "author": "eccenca GmbH <opensource@eccenca.com> (http://eccenca.com)",
   "license": "GPL-3.0",
   "devDependencies": {
     "ecc-gulp-tasks": "^0.16.11",
@@ -26,5 +26,8 @@
   "dependencies": {
     "rxmq": "^0.7.1",
     "rxmq.middleware": "^0.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/elds/ecc-messagebus/issues"
   }
 }
