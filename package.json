@@ -20,9 +20,9 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "ecc-dotfiles": "^1.4.0",
-    "ecc-gulp-tasks": "^0.16.11",
-    "ecc-test-helpers": "^0.2.0",
-    "gulp": "^3.8.11"
+    "ecc-gulp-tasks": "^2.0.1",
+    "ecc-test-helpers": "^1.0.0",
+    "gulp": "^3.9.0"
   },
   "dependencies": {
     "rxmq": "^0.7.1",
