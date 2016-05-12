@@ -1,6 +1,6 @@
 {
   "name": "ecc-messagebus",
-  "version": "3.3.3",
+  "version": "3.4.0",
   "description": "Eccenca Message Bus for inter-component and in-app communications.",
   "main": "es5/component.js",
   "es5": "es5/component.js",
@@ -8,23 +8,27 @@
   "scripts": {
     "build": "gulp",
     "cover": "gulp cover",
-    "init": "node common-files/install.js",
-    "prepublish": "git submodule init && git submodule update && npm run init && npm run build",
+    "init": "ecc-link-dotfiles",
+    "prepublish": "npm run init && npm run build",
     "test": "gulp test"
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.eccenca.com/elds-ui/ecc-messagebus.git"
+    "url": "https://github.com/elds/ecc-messagebus.git"
   },
-  "author": "Tim Ermilov <tim.ermilov@eccenca.com>",
+  "author": "eccenca GmbH <opensource@eccenca.com> (http://eccenca.com)",
   "license": "GPL-3.0",
   "devDependencies": {
-    "ecc-gulp-tasks": "^0.13.0",
-    "ecc-test-helpers": "^0.1.2",
-    "gulp": "^3.8.11"
+    "ecc-dotfiles": "^1.4.0",
+    "ecc-gulp-tasks": "^2.0.1",
+    "ecc-test-helpers": "^1.0.0",
+    "gulp": "^3.9.0"
   },
   "dependencies": {
     "rxmq": "^0.7.1",
     "rxmq.middleware": "^0.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/elds/ecc-messagebus/issues"
   }
 }
