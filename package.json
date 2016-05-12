@@ -8,8 +8,8 @@
   "scripts": {
     "build": "gulp",
     "cover": "gulp cover",
-    "init": "node common-files/install.js",
-    "prepublish": "git submodule init && git submodule update && npm run init && npm run build",
+    "init": "ecc-link-dotfiles",
+    "prepublish": "npm run init && npm run build",
     "test": "gulp test"
   },
   "repository": {
@@ -19,6 +19,7 @@
   "author": "eccenca GmbH <opensource@eccenca.com> (http://eccenca.com)",
   "license": "GPL-3.0",
   "devDependencies": {
+    "ecc-dotfiles": "^1.4.0",
     "ecc-gulp-tasks": "^0.16.11",
     "ecc-test-helpers": "^0.2.0",
     "gulp": "^3.8.11"
