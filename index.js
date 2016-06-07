@@ -1,3 +1,3 @@
-import postal from './src';
+import rxmq from './src';
 
-export default postal;
+export default rxmq;

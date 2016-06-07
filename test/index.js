@@ -3,17 +3,17 @@
 import should from 'ecc-test-helpers';
 
 // import module
-import postal from '../index.js';
+import rxmq from '../index.js';
 
 // main test suite
-describe('Postal.js', function() {
+describe('rxmq.js', function() {
     it('should exist', function() {
         // check object
-        should.exist(postal);
+        should.exist(rxmq);
     });
 
-    it('should work with normal postal workflow', function(done) {
-        const channel = postal.channel('test1');
+    it('should work with normal rxmq workflow', function(done) {
+        const channel = rxmq.channel('test1');
         channel.subject('test').subscribe((msg) => {
             should(msg).equal('test');
             done();
@@ -22,7 +22,7 @@ describe('Postal.js', function() {
     });
 
     it('should work with request-response workflow', function(done) {
-        const channel = postal.channel('test2');
+        const channel = rxmq.channel('test2');
         channel.subject('test').subscribe(({data, replySubject}) => {
             should(data).equal('test');
             replySubject.onNext('ok');
@@ -38,13 +38,15 @@ describe('Postal.js', function() {
     });
 
     it('should work with Rx.Observable workflow', function(done) {
-        const channel = postal.channel('test3');
+        const channel = rxmq.channel('test3');
         // rx workflow
         const source = channel.subject('test');
         source.skip(1).take(1).delay(100).subscribe(
-        (body) => {
-            should(body).equal('test2');
-        }, (err) => { throw err; }, () => done());
+            (body) => {
+                should(body).equal('test2');
+            }, (err) => {
+                throw err;
+            }, () => done());
 
         // dispatch messages
         channel.subject('test').onNext('test');
@@ -53,7 +55,7 @@ describe('Postal.js', function() {
     });
 
     it('should apply middleware', function(done) {
-        const channel = postal.channel('test4');
+        const channel = rxmq.channel('test4');
         // rx workflow
         const source = channel.subject('test');
         source.middleware.add((val) => val + '_middleware');
