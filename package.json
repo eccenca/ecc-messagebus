@@ -21,7 +21,7 @@
   "devDependencies": {
     "ecc-dotfiles": "^1.4.0",
     "ecc-gulp-tasks": "^2.0.1",
-    "ecc-test-helpers": "^1.0.0",
+    "ecc-test-helpers": "^15.0.0",
     "gulp": "^3.9.0"
   },
   "dependencies": {

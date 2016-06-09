@@ -1,3 +1,11 @@
-import postal from './src';
+import rxmq from './src';
 
-export default postal;
+import createChannels from './src/helpers/createChannels';
+import SubjectType from './src/helpers/SubjectType';
+
+export default rxmq;
+
+export {
+    createChannels,
+    SubjectType,
+};
