@@ -1,14 +1,33 @@
-# Rxmq.js with util (ecc-messagebus)
-
-Eccenca Message Bus for inter-component and in-app communications
-Eccenca Rxmq wrapper.
-
-## Usage
+# Eccenca Message Bus for inter-component and in-app communications
 
 `ecc-messagebus` exports a normal rxmq.js instance but with a set of additional functions.
 One of those functions is the `createChannels` helper.
+For convenience reasons it also exports `Rx` so that we can use a fixed `Rx` version in all components. 
 
-### Using request-response
+## Using Rx
+
+```js
+import {Rx} from 'ecc-messagebus';
+
+var source = Rx.Observable.just(42);
+
+var subscription = source.subscribe(
+  function (x) {
+    console.log(`Next: ${x}');
+  },
+  function (err) {
+    console.log(`Error: ${err}`);
+  },
+  function () {
+    console.log('Completed');
+  });
+
+// => Next: 42
+// => Completed
+
+```
+
+## Using request-response
 
 Request-response pattern can be used like so:
 
@@ -41,7 +60,7 @@ channel.request({
 });
 ```
 
-### Creating Channel Definitions
+## Creating Channel Definitions
 
 The `createChannels` functions allows to define channels and subjects.
 Basically it allows to create a channelDefinition with private and public subjects.
