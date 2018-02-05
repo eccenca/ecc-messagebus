@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/) and [Keep A Changelog's Format](http://keepachangelog.com/).
 
+## [Unreleased]
+
+### Removed
+
+- *BREAKING*: createChannels experiment
+
 ## [3.6.0] 2016-06-24 
 ### Added
 - Added `rx@4.1.0` dependency, which is exported as `Rx`
