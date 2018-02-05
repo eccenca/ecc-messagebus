@@ -1,5 +1,5 @@
 {
-  "name": "ecc-messagebus",
+  "name": "@eccenca/messagebus",
   "version": "3.6.0",
   "description": "Eccenca Message Bus for inter-component and in-app communications.",
   "main": "es5/component.js",
@@ -9,8 +9,11 @@
     "build": "gulp",
     "cover": "gulp cover",
     "init": "ecc-link-dotfiles",
-    "prepublish": "npm run init && npm run build",
-    "test": "gulp test"
+    "test": "gulp test",
+    "prepare": "npm run init && npm run build",
+    "docs": "gulp docs",
+    "precommit": "lint-staged",
+    "lint": "eslint --ignore-path .gitignore '**/*.{js,jsx}' --fix"
   },
   "repository": {
     "type": "git",
@@ -19,8 +22,8 @@
   "author": "eccenca GmbH <opensource@eccenca.com> (http://eccenca.com)",
   "license": "GPL-3.0",
   "devDependencies": {
-    "ecc-dotfiles": "^1.4.0",
-    "ecc-gulp-tasks": "^2.0.1",
+    "@eccenca/dotfiles": "^2.3.1",
+    "@eccenca/gulp-tasks": "^3.15.0",
     "ecc-test-helpers": "^15.0.0",
     "gulp": "^3.9.0"
   },
@@ -34,5 +37,8 @@
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org/"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "eslint"
   }
 }

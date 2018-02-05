@@ -7,8 +7,4 @@ import SubjectType from './src/helpers/SubjectType';
 
 export default rxmq;
 
-export {
-    createChannels,
-    SubjectType,
-    Rx,
-};
+export {createChannels, SubjectType, Rx};
