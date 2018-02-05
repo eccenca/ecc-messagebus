@@ -6948,17 +6948,17 @@ rx@^4.1.0:
   version "4.1.0"
   resolved "https://registry.npmjs.org/rx/-/rx-4.1.0.tgz#a5f13ff79ef3b740fe30aa803fb09f98805d4782"
 
-rxjs@^5.0.0-beta.11:
+rxjs@^5.0.0-beta.11, rxjs@^5.5.0, rxjs@^5.5.6:
   version "5.5.6"
   resolved "https://registry.npmjs.org/rxjs/-/rxjs-5.5.6.tgz#e31fb96d6fd2ff1fd84bcea8ae9c02d007179c02"
   dependencies:
     symbol-observable "1.0.1"
 
-rxmq@^0.9.3:
-  version "0.9.3"
-  resolved "https://registry.npmjs.org/rxmq/-/rxmq-0.9.3.tgz#da2472be135b370a57d6b9c4026809cf7615107d"
+rxmq@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.npmjs.org/rxmq/-/rxmq-1.1.5.tgz#44cca1a3dab9159e23808a3fd9825a60af121378"
   dependencies:
-    rx "^4.1.0"
+    rxjs "^5.5.0"
 
 safe-buffer@5.1.1, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"

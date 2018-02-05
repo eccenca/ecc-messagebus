@@ -1,7 +1,6 @@
-import rxmq from './src';
+import Rx from 'rxjs/Rx';
 
-import Rx from 'rx';
-
+import rxmq from 'rxmq';
 
 export default rxmq;
 

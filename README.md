@@ -1,7 +1,7 @@
 # Eccenca Message Bus for inter-component and in-app communications
 
 `ecc-messagebus` exports a normal rxmq.js instance but with a set of additional functions.
-For convenience reasons it also exports `Rx` so that we can use a fixed `Rx` version in all components. 
+For convenience it also exports `Rx` so that we can use a fixed `Rx` version in all components.
 
 ## Using Rx
 

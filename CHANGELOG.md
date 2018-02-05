@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep A Ch
 
 ## [Unreleased]
 
+### Changed
+- *BREAKING*: updated to rxjs 5.0.0
+
 ### Removed
 
 - *BREAKING*: createChannels experiment

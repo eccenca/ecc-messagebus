@@ -3,41 +3,43 @@
 import should from 'ecc-test-helpers';
 
 // import module
-import rxmq from '../index';
+import rxmq, {Rx} from '../index';
 
 // main test suite
-describe('rxmq.js', function() {
-    it('should exist', function() {
+describe('rxmq.js', () => {
+    it('should exist', () => {
         // check object
         should.exist(rxmq);
     });
 
-    it('should work with normal rxmq workflow', function(done) {
+    it('should work with normal rxmq workflow', done => {
         const channel = rxmq.channel('test1');
-        channel.subject('test').subscribe((msg) => {
+        channel.subject('test').subscribe(msg => {
             should(msg).equal('test');
             done();
         });
-        channel.subject('test').onNext('test');
+        channel.subject('test').next('test');
     });
 
-    it('should work with request-response workflow', function(done) {
+    it('should work with request-response workflow', done => {
         const channel = rxmq.channel('test2');
         channel.subject('test').subscribe(({data, replySubject}) => {
             should(data).equal('test');
-            replySubject.onNext('ok');
-            replySubject.onCompleted();
+            replySubject.next('ok');
+            replySubject.complete();
         });
-        channel.request({
-            topic: 'test',
-            data: 'test',
-        }).subscribe((data) => {
-            should(data).equal('ok');
-            done();
-        });
+        channel
+            .request({
+                topic: 'test',
+                data: 'test',
+            })
+            .subscribe(data => {
+                should(data).equal('ok');
+                done();
+            });
     });
 
-    it('should work with Rx.Observable workflow', function(done) {
+    it('should work with Rx.Observable workflow', done => {
         const channel = rxmq.channel('test3');
         // rx workflow
         const source = channel.subject('test');
@@ -52,6 +54,13 @@ describe('rxmq.js', function() {
         channel.subject('test').onNext('test');
         channel.subject('test').onNext('test2');
         channel.subject('test').onNext('test3');
+    });
+
+    it('should expose Rx ', done => {
+        Rx.Observable.of(1).subscribe(data => {
+            should(data).equal(1);
+            done();
+        });
     });
 
 });
