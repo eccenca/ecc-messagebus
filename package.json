@@ -29,8 +29,7 @@
   },
   "dependencies": {
     "rx": "^4.1.0",
-    "rxmq": "^0.9.3",
-    "rxmq.middleware": "^0.2.1"
+    "rxmq": "^0.9.3"
   },
   "bugs": {
     "url": "https://github.com/elds/ecc-messagebus/issues"

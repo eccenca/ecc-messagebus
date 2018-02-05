@@ -6944,7 +6944,7 @@ rx-lite@^3.1.2:
   version "3.1.2"
   resolved "https://registry.npmjs.org/rx-lite/-/rx-lite-3.1.2.tgz#19ce502ca572665f3b647b10939f97fd1615f102"
 
-rx@^4.0.6, rx@^4.1.0:
+rx@^4.1.0:
   version "4.1.0"
   resolved "https://registry.npmjs.org/rx/-/rx-4.1.0.tgz#a5f13ff79ef3b740fe30aa803fb09f98805d4782"
 
@@ -6953,12 +6953,6 @@ rxjs@^5.0.0-beta.11:
   resolved "https://registry.npmjs.org/rxjs/-/rxjs-5.5.6.tgz#e31fb96d6fd2ff1fd84bcea8ae9c02d007179c02"
   dependencies:
     symbol-observable "1.0.1"
-
-rxmq.middleware@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/rxmq.middleware/-/rxmq.middleware-0.2.1.tgz#8e508d7579132565247427f61ae3b5966ca065ed"
-  dependencies:
-    rx "^4.0.6"
 
 rxmq@^0.9.3:
   version "0.9.3"
