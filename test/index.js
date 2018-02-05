@@ -1,6 +1,6 @@
 /* global describe, it */
 // imports
-import should from 'ecc-test-helpers';
+import should from 'should';
 
 // import module
 import rxmq, {Rx} from '../index';
@@ -43,12 +43,19 @@ describe('rxmq.js', () => {
         const channel = rxmq.channel('test3');
         // rx workflow
         const source = channel.subject('test');
-        source.skip(1).take(1).delay(100).subscribe(
-            (body) => {
-                should(body).equal('test2');
-            }, (err) => {
-                throw err;
-            }, () => done());
+        source
+            .skip(1)
+            .take(1)
+            .delay(100)
+            .subscribe(
+                body => {
+                    should(body).equal('test2');
+                },
+                err => {
+                    throw err;
+                },
+                () => done()
+            );
 
         // dispatch messages
         channel.subject('test').onNext('test');
@@ -62,5 +69,4 @@ describe('rxmq.js', () => {
             done();
         });
     });
-
 });
