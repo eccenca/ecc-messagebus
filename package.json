@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/elds/ecc-messagebus.git"
+    "url": "https://github.com/eccenca/ecc-messagebus.git"
   },
   "author": "eccenca GmbH <opensource@eccenca.com> (http://eccenca.com)",
   "license": "GPL-3.0",
@@ -31,7 +31,7 @@
     "rxmq": "^1.1.5"
   },
   "bugs": {
-    "url": "https://github.com/elds/ecc-messagebus/issues"
+    "url": "https://github.com/eccenca/ecc-messagebus/issues"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org/"
