@@ -58,9 +58,9 @@ describe('rxmq.js', () => {
             );
 
         // dispatch messages
-        channel.subject('test').onNext('test');
-        channel.subject('test').onNext('test2');
-        channel.subject('test').onNext('test3');
+        channel.subject('test').next('test');
+        channel.subject('test').next('test2');
+        channel.subject('test').next('test3');
     });
 
     it('should expose Rx ', done => {
