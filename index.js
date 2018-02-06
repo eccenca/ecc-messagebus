@@ -1,14 +1,7 @@
-import rxmq from './src';
+import Rx from 'rxjs/Rx';
 
-import Rx from 'rx';
-
-import createChannels from './src/helpers/createChannels';
-import SubjectType from './src/helpers/SubjectType';
+import rxmq from 'rxmq';
 
 export default rxmq;
 
-export {
-    createChannels,
-    SubjectType,
-    Rx,
-};
+export {Rx};

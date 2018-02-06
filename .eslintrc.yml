@@ -1,0 +1,60 @@
+extends:
+  - airbnb
+  - plugin:react/recommended
+  - prettier
+  - prettier/react
+plugins:
+  - react
+  - jsx-a11y
+  - import
+  - prettier
+env:
+  browser: true
+  es6: true
+  node: true
+parser: babel-eslint
+globals:
+  __DEBUG__: true
+  __WEBPACK__: true
+  __VERSION__: true
+parserOptions:
+   ecmaFeatures:
+     # enable JSX support
+      jsx: true
+rules:
+  prettier/prettier:
+    - error
+    - singleQuote: true
+      trailingComma: es5
+      bracketSpacing: false
+      jsxBracketSameLine: true
+      tabWidth: 4
+      printWidth: 80
+      semi: true
+  no-plusplus: ["error", { "allowForLoopAfterthoughts": true }]
+  no-use-before-define: ["warn"]
+  no-warning-comments: [
+    "warn",
+    {
+      "terms": ["todo", "fixme", "xxx", "to do", "fix me"]
+    }
+  ]
+  import/no-extraneous-dependencies: [
+    "error",
+    {
+      "devDependencies": [
+        "./buildConfig.js",
+        "./gulpfile.js",
+        "**/*.test.js",
+        "**/*.spec.js",
+        "ui-test/**/*",
+        "test/**/*"
+      ]
+    }
+  ]
+  react/jsx-no-bind: ["warn"]
+  react/forbid-prop-types: ["warn"]
+  react/prefer-es6-class: ["warn"]
+  react/prop-types: ["warn"]
+  react/require-default-props: ["warn"]
+  react/sort-comp: ["warn"]
